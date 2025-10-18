@@ -4,6 +4,15 @@
     padding: 2rem 1rem 4rem;
 }
 
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f6f8 50%, #e9edf2 100%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 .page__header {
     display: grid;
     gap: 0.5rem;
@@ -13,12 +22,15 @@
 
 .page__title {
     margin: 0;
-    font-size: 2rem;
+   
+    font-size: 2.75rem;
+    line-height: 1.05;
 }
 
 .page__subtitle {
     margin: 0;
-    color: #888;
+    color: #666; 
+    font-weight: 500;
 }
 
 .toolbar {
@@ -115,13 +127,17 @@ select {
     border-radius: 8px;
     border: 1px solid #3a3a3a;
     padding: 0.5rem 0.75rem;
-    background: #1a1a1a;
-    color: inherit;
+    background: #ffffff; 
+    color: #081029;
 }
 
 .form__actions {
     display: flex;
     gap: 0.5rem;
+    /* place into the last (actions) column and align to the bottom */
+    grid-column: 4;
+    align-self: end;
+    justify-self: start;
 }
 
 .page__footer {
@@ -136,5 +152,18 @@ select {
     }
     .search__controls {
         grid-template-columns: 1fr 1fr;
+    }
+    .form__actions {
+        grid-column: 1; /* full width */
+        justify-self: stretch;
+    }
+    .form__actions .btn {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1100px) {
+    .page__title {
+        font-size: 3rem;
     }
 }

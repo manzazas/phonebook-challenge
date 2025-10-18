@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import PhonebookAccordian from "./components/accordian";
 const FALLBACK_CONTACTS = [
     {
         id: 1,
@@ -40,8 +41,8 @@ const App = () => {
     return (
         <main className="page" data-testid="page-root">
             <header className="page__header">
-                <h1 className="page__title">Phonebook Challenge</h1>
-                <p className="page__subtitle">Build a simple contact directory</p>
+                <h1 className="page__title">Ultimate Phonebook</h1>
+                <p className="page__subtitle">The ultimate solution for managing your contacts.</p>
             </header>
 
             <section className="search" aria-labelledby="search-heading">
@@ -66,9 +67,7 @@ const App = () => {
                 </p>
             </section>
 
-            <section className="contacts" aria-labelledby="contacts-heading">
-                <h2 id="contacts-heading">Contacts</h2>
-            </section>
+            
 
             <section className="form" aria-labelledby="form-heading">
                 <h2 id="form-heading">Add a Contact</h2>
@@ -118,10 +117,14 @@ const App = () => {
                 </form>
             </section>
 
+            <section className="contacts" aria-labelledby="contacts-heading">
+                <h2 id="contacts-heading">Contacts</h2>
+                <PhonebookAccordian/>
+            </section>
+
             <footer className="page__footer">
                 <small>
-                    Starter provided. Complete tasks per README and make this page
-                    shine.
+                    &copy ; 2025 Ultimate Phonebook. All rights reserved.
                 </small>
             </footer>
         </main>
