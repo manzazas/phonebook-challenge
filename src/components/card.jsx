@@ -2,20 +2,28 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import React from 'react';
 
+// Presentational contact card. Accepts a `contact` object and optional `onRemove(id)` callback.
+function ContactCard({ contact = {}, onRemove }) {
+    const { id, name = 'Unknown', phone = '—', email = '—' } = contact;
 
-function ContactCard() {
-  return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>{}</Card.Title>
-        <Card.Text>
-         Information about the person
-        </Card.Text>
-        <Button variant="primary">Remove From Contacts</Button>
-      </Card.Body>
-    </Card>
-  );
+    return (
+        <Card style={{ width: '18rem', margin: '0.5rem' }}>
+            <Card.Body>
+                <Card.Title>{name}</Card.Title>
+                <Card.Text>
+                    <div>
+                        <strong>Phone:</strong> {phone}
+                    </div>
+                    <div>
+                        <strong>Email:</strong> {email}
+                    </div>
+                </Card.Text>
+                <Button variant="primary" onClick={() => onRemove?.(id)}>
+                    Remove
+                </Button>
+            </Card.Body>
+        </Card>
+    );
 }
 
 export default ContactCard;

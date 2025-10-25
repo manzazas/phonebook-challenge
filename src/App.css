@@ -1,16 +1,33 @@
-.page {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2rem 1rem 4rem;
+:root {
+    --bg-900: #060916;
+    --bg-800: #0b1726;
+    --panel: rgba(255,255,255,0.03);
+    --muted: rgba(255,255,255,0.6);
+    --text: #e6eef9;
+    --brand-primary: #2f7bff;
+    --accent: #ffcb2b;
 }
 
+.page {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2.25rem 2rem 4rem;
+    color: var(--text);
+    min-height: 100vh;
+}
+
+html, body {
+    height: 100%;
+}
 
 body {
     margin: 0;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #ffffff 0%, #f5f6f8 50%, #e9edf2 100%);
+    background: linear-gradient(180deg, var(--bg-900) 0%, #071228 40%, var(--bg-800) 100%);
+    background-attachment: fixed;
+    background-size: cover;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: var(--text);
 }
 
 .page__header {
@@ -22,14 +39,15 @@ body {
 
 .page__title {
     margin: 0;
-   
-    font-size: 2.75rem;
+    font-size: 1.9rem;
     line-height: 1.05;
+    color: var(--text);
+    font-weight: 700;
 }
 
 .page__subtitle {
     margin: 0;
-    color: #666; 
+    color: var(--muted);
     font-weight: 500;
 }
 
@@ -39,16 +57,6 @@ body {
     align-items: center;
     flex-wrap: wrap;
 }
-
-.btn {
-    border-radius: 8px;
-    border: 1px solid #3a3a3a;
-    padding: 0.5rem 0.9rem;
-    background: #1a1a1a;
-    color: inherit;
-    cursor: pointer;
-}
-
 .theme {
     display: inline-flex;
     gap: 0.5rem;
@@ -56,58 +64,105 @@ body {
     margin-left: 1rem;
 }
 
-.search {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #333;
+.btn-primary {
+    background-color: var(--brand-primary) !important;
+    border-color: var(--brand-primary) !important;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #245ecc !important;
+    border-color: #245ecc !important;
 }
 
+
 .search__controls {
-    display: grid;
-    grid-template-columns: minmax(140px, 1fr) 1fr minmax(120px, 1fr) 1fr;
-    gap: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.search__controls input {
+    flex: 1;
+    width: 100%;
+    min-height: 56px;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.04);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    color: var(--text);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 3px 18px rgba(2,6,23,0.6);
+    font-size: 1rem;
+}
+.search__results {
+    color: var(--muted);
+}
+.search__results { color: var(--muted); }
+.contact {
+    flex: 1;
+    padding: 1rem;
+    background: transparent;
+}
+.contact-heading {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.search__results {
-    color: #888;
+.actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+.add-btn {
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
 }
 
 .contacts {
     margin-top: 1.5rem;
+    flex: auto;
 }
 
 .contacts__grid {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 1.25rem 0 0 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
 }
 
-.contact-card {
-    border: 1px solid #333;
+.page .contacts__grid .card {
+    background: linear-gradient(180deg, rgba(47,123,255,0.28), rgba(25,90,230,0.18)) !important;
+    background-color: rgba(25,90,230,0.18) !important;
+    border: 1px solid rgba(47,123,255,0.32) !important;
     border-radius: 12px;
-    padding: 1rem;
-    background: #111;
+    padding: 0;
+    color: #ffffff;
+    box-shadow: 0 12px 34px rgba(2,6,23,0.75);
+    overflow: hidden;
 }
-
-.contact-card__name {
-    margin: 0 0 0.25rem 0;
-    font-size: 1.1rem;
+.page .contacts__grid .card .card-body {
+    padding: 1.25rem 1.5rem;
 }
-
-.contact-card__email,
-.contact-card__phone {
-    margin: 0.1rem 0;
-    color: #aaa;
+.card .card-title {
+    margin: 0 0 0.35rem 0;
+    color: #ffffff;
+    font-weight: 700;
 }
-
-.form {
-    margin-top: 2rem;
-    border-top: 1px solid #333;
-    padding-top: 1rem;
+.page .contacts__grid .card .card-title {
+    margin: 0 0 0.35rem 0;
+    color: #ffffff;
+    font-weight: 700;
+}
+.page .contacts__grid .card .card-text {
+    color: rgba(255,255,255,0.95);
+}
+.page .contacts__grid .card .contact-meta {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.95rem;
 }
 
 .form__body {
@@ -125,25 +180,22 @@ body {
 input,
 select {
     border-radius: 8px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid rgba(255,255,255,0.04);
     padding: 0.5rem 0.75rem;
-    background: #ffffff; 
-    color: #081029;
+    background: transparent;
+    color: var(--text);
 }
 
 .form__actions {
     display: flex;
     gap: 0.5rem;
-    /* place into the last (actions) column and align to the bottom */
-    grid-column: 4;
-    align-self: end;
-    justify-self: start;
 }
 
 .page__footer {
     margin-top: 3rem;
     color: #777;
     text-align: center;
+    padding: 2.5rem 0 3.5rem; /* add spacing so footer doesn't visually intersect the cards */
 }
 
 @media (max-width: 720px) {
@@ -153,17 +205,38 @@ select {
     .search__controls {
         grid-template-columns: 1fr 1fr;
     }
-    .form__actions {
-        grid-column: 1; /* full width */
-        justify-self: stretch;
-    }
-    .form__actions .btn {
-        width: 100%;
-    }
 }
 
 @media (min-width: 1100px) {
     .page__title {
         font-size: 3rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .contacts__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .contacts__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .page {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .contacts__grid {
+        grid-template-columns: 1fr;
+    }
+    .page__title {
+        font-size: 1.5rem;
+    }
+    .search__controls input {
+        min-height: 48px;
     }
 }

@@ -28,8 +28,7 @@
         "name": "Donald Knuth",
         "phone": "(555) 010-0105",
         "email": "donald@example.com"
-    }
-    ,
+    },
     {
         "id": 106,
         "name": "Margaret Hamilton",
