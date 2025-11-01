@@ -1,11 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import React from 'react';
+const ContactCard = (props) => {
 
-// Presentational contact card. Accepts a `contact` object and optional `onRemove(id)` callback.
-function ContactCard({ contact = {}, onRemove }) {
-    const { id, name = 'Unknown', phone = '—', email = '—' } = contact;
 
+    const { id, name, phone, email } = props;
     return (
         <Card style={{ width: '18rem', margin: '0.5rem' }}>
             <Card.Body>
@@ -18,12 +17,10 @@ function ContactCard({ contact = {}, onRemove }) {
                         <strong>Email:</strong> {email}
                     </div>
                 </Card.Text>
-                <Button variant="primary" onClick={() => onRemove?.(id)}>
-                    Remove
-                </Button>
             </Card.Body>
         </Card>
     );
 }
+
 
 export default ContactCard;
