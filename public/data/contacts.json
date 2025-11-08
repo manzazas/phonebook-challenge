@@ -1,0 +1,68 @@
+[
+  {
+    "id": 101,
+    "name": "Bugs Bunny",
+    "phone": "(555) 010-0101",
+    "email": "bugs@looneytoons.com"
+  },
+  {
+    "id": 102,
+    "name": "Daffy Duck",
+    "phone": "(555) 010-0102",
+    "email": "daffy@looneytoons.com"
+  },
+  {
+    "id": 103,
+    "name": "Porky Pig",
+    "phone": "(555) 010-0103",
+    "email": "porky@looneytoons.com"
+  },
+  {
+    "id": 104,
+    "name": "Elmer Fudd",
+    "phone": "(555) 010-0104",
+    "email": "elmer@looneytoons.com"
+  },
+  {
+    "id": 105,
+    "name": "Tweety Bird",
+    "phone": "(555) 010-0105",
+    "email": "tweety@looneytoons.com"
+  },
+  {
+    "id": 106,
+    "name": "Sylvester the Cat",
+    "phone": "(555) 010-0106",
+    "email": "sylvester@looneytoons.com"
+  },
+  {
+    "id": 107,
+    "name": "Yosemite Sam",
+    "phone": "(555) 010-0107",
+    "email": "sam@looneytoons.com"
+  },
+  {
+    "id": 108,
+    "name": "Road Runner",
+    "phone": "(555) 010-0108",
+    "email": "roadrunner@looneytoons.com"
+  },
+  {
+    "id": 109,
+    "name": "Wile E. Coyote",
+    "phone": "(555) 010-0109",
+    "email": "wilecoyote@looneytoons.com"
+  },
+  {
+    "id": 110,
+    "name": "Foghorn Leghorn",
+    "phone": "(555) 010-0110",
+    "email": "foghorn@looneytoons.com"
+  },
+  {
+    "id": 111,
+    "name": "Tasmanian Devil",
+    "phone": "(555) 010-0111",
+    "email": "taz@looneytoons.com"
+  }
+]
